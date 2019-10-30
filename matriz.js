@@ -27,8 +27,16 @@ class Matriz{
         console.log(matriz);
     }
 
-    somarMatriz(matrizA, matrizB){
-        
+    somarMatriz(matrizA, matrizB, nLinhas, nColunas){
+        console.log(nLinhas);
+        var matrizResultado = [];
+        for(let i=0; i<nLinhas; i++){
+            matrizResultado[i] = [];
+            for(let j=0; j<nColunas; j++){
+                matrizResultado[i][j] = matrizA[i][j] + matrizB[i][j];
+            }
+        }
+        return matrizResultado;
     }
 
 
