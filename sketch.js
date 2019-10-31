@@ -25,11 +25,14 @@ function setup() {
     [5,6],[7,8]
 ];
 
-var m = new Matriz();
-matrizSomada = [];
-matrizSomada = m.somarMatriz(matrizA, matrizB, 2, 2);
-console.log(matrizSomada);
 
+var m = new Matriz();
+
+var A = m.criarMatriz(2,3);
+var B = m.criarMatriz(3,4);
+
+//var C = m.somarMatriz(A,B, A.length,A[0].length);
+var M = m.multiplicarMatriz(A,B,A.length,A[0].length,B.length,B[0].length);
 
 
   }
