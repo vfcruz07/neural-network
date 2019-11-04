@@ -26,13 +26,11 @@ function setup() {
 ];
 
 
-var m = new Matriz();
 
-var A = m.criarMatriz(2,3);
-var B = m.criarMatriz(3,4);
+var rn = new RedeNeural(2,3,1);
+var arr =[1,2];
+rn.feedforwad(arr);
 
-//var C = m.somarMatriz(A,B, A.length,A[0].length);
-var M = m.multiplicarMatriz(A,B,A.length,A[0].length,B.length,B[0].length);
 
 
   }

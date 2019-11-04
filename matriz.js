@@ -7,14 +7,36 @@ class Matriz{
             for(let j=0; j<nColunas; j++){
                 var i1 = i+1;
                 var j1 = j+1;
-                matriz[i][j] = parseInt(prompt("Informe um valor para a posição " + i1 + " x " + j1));
+                matriz[i][j] = Math.floor(Math.random()*10);
             }
         }
-        console.log(matriz);
         return matriz;
     }
 
-    somarMatriz(matrizA, matrizB, nLinhas, nColunas){
+    randomizar(matriz){
+        for(let i=0; i<matriz.length; i++){
+            for(let j=0; j<matriz[0].length; j++){
+                matriz[i][j] = Math.random()*2 -1;
+            }
+        }
+        return matriz;
+    }
+
+    imprimir(matriz){
+        console.log(matriz);
+    }
+
+    static converterColunas(arr){
+        let matriz = new Matriz();
+        let m = matriz.criarMatriz(arr.length, 1);
+        for(let j=0; j<arr.length; j++){
+            m[j][0] = arr[j];
+        }
+        
+        return(m);
+    }
+
+    static somarMatriz(matrizA, matrizB, nLinhas, nColunas){
         var matrizSoma = [];
         for(let i=0; i<nLinhas; i++){
             matrizSoma[i] = [];
@@ -22,12 +44,11 @@ class Matriz{
                 matrizSoma[i][j] = matrizA[i][j] + matrizB[i][j];
             }
         }
-        console.log(matrizSoma);
         return matrizSoma;
     }
 
     
-    multiplicarMatriz(matrizA, matrizB, nLinhasA, nColunasA, nLinhasB, nColunasB){
+    static multiplicarMatriz(matrizA, matrizB, nLinhasA, nColunasA, nLinhasB, nColunasB){
         var matrizMult = [];
         for(let i=0; i<nLinhasA; i++){
             matrizMult[i] = [];
@@ -35,11 +56,11 @@ class Matriz{
                 let result = 0;
                 for(let n=0; n<nLinhasB; n++){
                     result = result + (matrizA[i][n]*matrizB[n][j]);
+                    console.log(result);
                 }
                 matrizMult[i][j] = result;
             }
         }
-        console.log(matrizMult);
         return(matrizMult);
     }
 
