@@ -36,6 +36,9 @@ class Matriz{
         return(m);
     }
 
+
+
+
     static somarMatriz(matrizA, matrizB, nLinhas, nColunas){
         var matrizSoma = [];
         for(let i=0; i<nLinhas; i++){
@@ -64,6 +67,25 @@ class Matriz{
         return(matrizMult);
     }
 
+    static hadamard(matrizA, matrizB){
+        var matrizHad = [];
+        for(let i=0; i<matrizA.length; i++){
+            matrizHad[i] = [];
+            for(let j=0; j<matrizA[i].length; j++){
+                matrizHad[i][j] = matrizA[i][j] * matrizB[i][j];
+            }
+        }
+        return(matrizHad);
+    }
 
+    static mult_escalar(matriz, escalar){
+        var escMat=matriz;
+        for(let i=0; i< matriz.length; i++){
+            for(let j=0; j <matriz[i].length; j++){
+                escMat[i][j] = matriz[i][j]*escalar;
+            }
+        }
+        return(escMat);
+    }
 
 }
