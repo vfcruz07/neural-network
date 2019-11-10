@@ -36,6 +36,39 @@ class Matriz{
         return(m);
     }
 
+    static converterLinhas(matriz){
+        let vetor = [];
+        for(let i=0; i<matriz.length; i++){
+            for(let j=0; j<matriz[0].length; j++){
+                vetor[j] = matriz[i][j];
+            }
+        }
+        return vetor;
+    }
+
+
+    static transpose(matriz){
+        let transposta = new Matriz().criarMatriz(matriz[0].length, matriz.length);
+        for(let i=0; i<matriz.length; i++){
+            for(let j=0; j<matriz[i].length; j++){
+                transposta[j][i] = matriz[i][j];
+            }
+        }
+        return(transposta);
+        
+    }
+
+    static subtrairMatriz(matrizA, matrizB){
+        let matrizSub = [];
+        for(let i=0; i< matrizA.length; i++){
+            matrizSub[i] = [];
+            for (let j=0; j< matrizA[i].length; j++){
+                matrizSub[i][j] = matrizA[i][j] - matrizB[i][j];
+            }
+        }
+        return matrizSub;
+    }
+
 
 
 
@@ -59,7 +92,6 @@ class Matriz{
                 let result = 0;
                 for(let n=0; n<nLinhasB; n++){
                     result = result + (matrizA[i][n]*matrizB[n][j]);
-                    console.log(result);
                 }
                 matrizMult[i][j] = result;
             }
