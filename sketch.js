@@ -23,17 +23,19 @@ function setup() {
                 [0]
             ]
     };
-    
+   
+
 
 }
   function draw() {
   
     if(train){
+        console.log("aprendendo");
         for(var i = 0; i< 10000; i++){
             var index = floor(random(4));
             rn.train(dataset.inputs[index], dataset.outputs[index]);
         }
-        if(rn.predict([0,0])[0] < 0.04 && rn.predict([1,0])[0] > 0.98){
+        if(rn.predict([0,0])[0] < 0.04 && rn.predict([1,0])[0] > 0.88){
             train = false;
             console.log("terminou");
         }

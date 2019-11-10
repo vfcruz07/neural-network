@@ -120,7 +120,7 @@ class RedeNeural{
         gradient = Matriz.mult_escalar(gradient, this.learning_rate);
 
         //Ajustar bias
-        this.bias_ho = Matriz.somarMatriz(this.bias_ho, gradient, gradient.length, gradient[0].length);
+        this.bias_ho = Matriz.somarMatriz(this.bias_ho, gradient, this.bias_ho.length, this.bias_ho[0].length);
 
 
         let hidden_T = Matriz.transpose(hidden);
